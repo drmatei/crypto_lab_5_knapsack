@@ -1,0 +1,33 @@
+_generate_superincreasing(n)
+- Creates a superincreasing sequence where each element is greater than the sum of all previous elements
+- n: how many numbers to generate
+- Returns: the list and the total sum
+
+generate_keys(n)
+- Generates a public key and private key pair for the knapsack cryptosystem
+- n: key length in bits (default 10)
+- Returns: public_key (list of numbers) and private_key (tuple with w, q, r)
+
+_text_to_bits(plaintext)
+- Converts plaintext into a binary string representation using a 27-character alphabet
+- plaintext: the message to convert
+- Returns: string of 0s and 1s (5 bits per character)
+
+encrypt(plaintext, public_key)
+- Encrypts a plaintext message using the knapsack public key cryptosystem
+- plaintext: the message to encrypt
+- public_key: the public key from generate_keys
+- Returns: list of numbers (encrypted blocks)
+
+subset_sum_problem:
+- Greedy algorithm that obtains a string of bits, with the 1 bits representing the largest elements of the
+superincreasing sequence w that sum up to c_prime
+- w: superincreasing sequence
+- c_prime: value for which we solve the sum problem
+- Returns: solution of the problem, in binary form
+
+decrypt:
+- Using the private key, decrypts the ciphertext
+- ciphertext: text to be decrypted
+- private_key: private key obtained from generate_keys
+- Returns: the original message

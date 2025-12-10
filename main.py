@@ -117,9 +117,9 @@ class KnapsackCrypto:
             # The list is reversed, so we add the bits to the front of the bit_result string
         return bit_result
 
-    def decrypt(self, cyphertext, private_key):
+    def decrypt(self, ciphertext, private_key):
         """
-        Using the private key, decrypts the cyphertext
+        Using the private key, decrypts the ciphertext
         """
         w, q, r = private_key
 
@@ -127,9 +127,9 @@ class KnapsackCrypto:
         r_prime = pow(r, -1, q)
 
         bit_string = ''
-        for cyphertext_block in cyphertext:
+        for ciphertext_block in ciphertext:
             # 2. For each block in the cyphertext, calculate c * r_prime mod q
-            c_prime = (cyphertext_block * r_prime) % q
+            c_prime = (ciphertext_block * r_prime) % q
 
             # 3. For each block, we resolve the subset sum problem using the superincreasing sequence w,
             # and add its result to the binary message string
